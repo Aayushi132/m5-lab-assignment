@@ -1,0 +1,9 @@
+.title {
+  padding: 1em;
+  background-color: rgba(0, 196, 250, 0.842);
+}
+
+.productImage {
+  height: 20em;
+  width: 20em;
+}
