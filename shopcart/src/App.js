@@ -39,20 +39,32 @@ class App extends Component {
     };
   }
   renderProducts(products) {
+    
     return (
       <div>
         {products.map((product) => (
-          <div key={product.id}>
-            <img src={product.image} className="productImage"/> {product.desc} {product.value} Quantity
+          <div
+            key={product.id}
+            style={{ border: "1.5px solid rgba(0, 0, 0, 0.05)" }}
+          >
+            <p>
+              <span className="desc">{product.desc}</span>
+            </p>
+            <img src={product.image} className="productImage" /> <span className="value"> {product.value} </span>{" "}
+            quantity
           </div>
         ))}
       </div>
     );
   }
   render() {
+    
     return (
       <div>
-        <h1 className="title">Shop to React</h1>
+        <h1 className="title">
+          Shop to React <span> 0 items </span>
+        </h1>
+
         {this.renderProducts(this.state.Products)}
       </div>
     );

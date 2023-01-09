@@ -3,7 +3,27 @@
   background-color: rgba(0, 196, 250, 0.842);
 }
 
+/* span {
+  padding-right: 10em;
+  font-size: small;
+} */
+
 .productImage {
   height: 20em;
   width: 20em;
+  margin-left: 2em;
+}
+
+.desc {
+  margin-left: 8em;
+  margin-top: 1em;
+}
+
+.value {
+  border: 1px;
+  border-style: solid;
+  border-color: rgb(211, 204, 204);
+  text-align: center;
+  padding: .2em;
+  
 }
