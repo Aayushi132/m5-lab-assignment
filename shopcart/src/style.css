@@ -3,10 +3,10 @@
   background-color: rgba(0, 196, 250, 0.842);
 }
 
-/* span {
-  padding-right: 10em;
+.cart {
+  margin-left: 45em;
   font-size: small;
-} */
+}
 
 .productImage {
   height: 20em;
@@ -20,10 +20,15 @@
 }
 
 .value {
-  border: 1px;
+  border: 1.5px;
   border-style: solid;
   border-color: rgb(211, 204, 204);
   text-align: center;
   padding: .2em;
-  
+  margin-left: 2em;
+
+}
+
+.text {
+  margin-left: .5em;
 }

@@ -39,7 +39,6 @@ class App extends Component {
     };
   }
   renderProducts(products) {
-    
     return (
       <div>
         {products.map((product) => (
@@ -50,19 +49,22 @@ class App extends Component {
             <p>
               <span className="desc">{product.desc}</span>
             </p>
-            <img src={product.image} className="productImage" /> <span className="value"> {product.value} </span>{" "}
-            quantity
+            <img src={product.image} className="productImage" />{" "}
+            <span className="value"> {product.value} </span>{" "}
+            <span className="text"> quantity </span>
           </div>
         ))}
       </div>
     );
   }
   render() {
-    
     return (
       <div>
         <h1 className="title">
-          Shop to React <span> 0 items </span>
+          Shop to React{" "}
+          <span className="cart">
+            <FontAwesomeIcon icon="fa-solid fa-cart-shopping" /> 0 items{" "}
+          </span>
         </h1>
 
         {this.renderProducts(this.state.Products)}
