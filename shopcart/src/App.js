@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./style.css";
+// import { faShoppingCart } from "react-icons/fa";
+// import { IconName } from "react-icons/fa";
 
 class App extends Component {
   constructor(props) {
@@ -42,16 +44,14 @@ class App extends Component {
     return (
       <div>
         {products.map((product) => (
-          <div
-            key={product.id}
-            style={{ border: "1.5px solid rgba(0, 0, 0, 0.05)" }}
-          >
-            <p>
-              <span className="desc">{product.desc}</span>
+          <div key={product.id}>
+            <p className="desc">
+              <span>{product.desc}</span>
             </p>
             <img src={product.image} className="productImage" />{" "}
             <span className="value"> {product.value} </span>{" "}
             <span className="text"> quantity </span>
+            <div style={{ border: "1.5px solid rgba(0, 0, 0, 0.05)" }}></div>
           </div>
         ))}
       </div>
@@ -63,7 +63,7 @@ class App extends Component {
         <h1 className="title">
           Shop to React{" "}
           <span className="cart">
-            <FontAwesomeIcon icon="fa-solid fa-cart-shopping" /> 0 items{" "}
+            <FontAwesomeIcon icon={faShoppingCart} /> 0 items{" "}
           </span>
         </h1>
 

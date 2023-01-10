@@ -16,8 +16,9 @@
 
 .desc {
   margin-left: 7.2em;
-  margin-top: 1em;
-  font-size: .5cm;
+  margin-top: 2em;
+  font-size: 0.5cm;
+  font-weight: 500;
 }
 
 .value {
@@ -25,11 +26,10 @@
   border-style: solid;
   border-color: rgb(211, 204, 204);
   text-align: center;
-  padding: .2em;
+  padding: 1.2em;
   margin-left: 2em;
-
 }
 
 .text {
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
