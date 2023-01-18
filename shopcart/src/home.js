@@ -3,6 +3,8 @@ import { ProductData } from "./Products";
 import handleShow from "./displayProducts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faHome } from "@fortawesome/free-solid-svg-icons";
+
+import Display from "./displayProducts";
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -11,27 +13,15 @@ class Home extends Component {
     };
   }
   renderProducts(products) {
+    console.log("Test: ", products);
     return (
-      {},
-      (
-        <div>
-          {products.map((product) => (
-            <div key={product.id}>
-              <p className="desc">
-                <span>{product.desc}</span>
-              </p>
-              <img
-                src={product.image}
-                className="productImage"
-                onClick={() => handleShow(product)}
-              />{" "}
-              <span className="value"> {product.value} </span>{" "}
-              <span className="text"> quantity </span>
-              <div style={{ border: "1.5px solid rgba(0, 0, 0, 0.05)" }}></div>
-            </div>
-          ))}
-        </div>
-      )
+      <div>
+        {products.map((product) => (
+          <div>
+            <Display>products = {product}</Display>
+          </div>
+        ))}
+      </div>
     );
   }
   render() {
@@ -44,7 +34,7 @@ class Home extends Component {
           </span>
         </h1>
 
-        {this.renderProducts(this.state.Products)}
+        {this.renderProducts(this.state.Products.Products)}
       </div>
     );
   }

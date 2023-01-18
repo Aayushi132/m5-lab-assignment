@@ -22,9 +22,10 @@ class App extends Component {
       (
         <div className="App text-secondary">
           <Nav
-            // lists1={this.state.Products.Products[0]}
-            // lists2={this.state.Products.Products[1]}
+            lists1={this.state.Products.Products[0]}
+            lists2={this.state.Products.Products[1]}
           />
+          {/* pass data as attributes */}
         </div>
       )
     );
