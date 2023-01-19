@@ -3,8 +3,9 @@ import { ProductData } from "./Products";
 import handleShow from "./displayProducts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faHome } from "@fortawesome/free-solid-svg-icons";
-
 import Display from "./displayProducts";
+import CartItems from "./CartItems";
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -15,24 +16,33 @@ class Home extends Component {
   renderProducts(products) {
     console.log("Test: ", products);
     return (
-      <div>
+      <div className="alignmentLeft">
         {products.map((product) => (
-          <div>
             <Display>products = {product}</Display>
-          </div>
         ))}
       </div>
     );
   }
+
+  renderCartItems(products) {
+      return (
+        <div>
+          {products.map((product) => (
+            <CartItems>cartItem = {product}</CartItems>
+          ))}
+        </div>
+      );
+  }
+
   render() {
     return (
-      <div>
-        <h1 className="title">
-          Shop to React{" "}
+      <div className="header"> 
+        {/* <h1 className="title">
+          Shop 2 React{" "}
           <span className="cart">
             <FontAwesomeIcon icon={faShoppingCart} /> 0 items{" "}
           </span>
-        </h1>
+        </h1> */}
 
         {this.renderProducts(this.state.Products.Products)}
       </div>

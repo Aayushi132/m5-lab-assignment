@@ -3,13 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faHome } from "@fortawesome/free-solid-svg-icons";
 import Home from "./home";
 import ShoppingCart from "./cart";
+import { ProductData } from "./Products";
 
 function Nav(props) {
+  
   return (
-    <div className="header bg-dark">
+    <div>
       <Router>
         {/* Navigation */}
-        <ul className="nav mx-2 mb-4 mr-2">
+        {/* <ul className="nav mx-2 mb-4 mr-2">
           <li>
             <Link to="/">
               <FontAwesomeIcon
@@ -26,7 +28,15 @@ function Nav(props) {
               />
             </Link>
           </li>
-        </ul>
+        </ul> */}
+        <h1 className="title">
+          Shop 2 React{" "}
+          <span className="cart">
+            <Link to="/allLists">
+              <FontAwesomeIcon icon={faShoppingCart} /> {props.cartTotal.cartTotal} items{" "}
+            </Link>
+          </span>
+        </h1>
         {/* Routes */}
         <Routes>
           {/* <Route path="/" element={<displayProducts />} /> */}
@@ -34,9 +44,7 @@ function Nav(props) {
 
           <Route
             path="/allLists"
-            element={
-              <ShoppingCart lists1={props.lists1} lists2={props.lists2} />
-            }
+            element={<ShoppingCart cartItems={props} />}
           />
         </Routes>
       </Router>

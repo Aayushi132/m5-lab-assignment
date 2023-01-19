@@ -29,4 +29,9 @@ export const ProductData = {
       value: 0,
     },
   ],
+  TotalCartItems: [
+    {
+      cartTotal: 0,
+    },
+  ],
 };

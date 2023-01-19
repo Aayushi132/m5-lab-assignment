@@ -11,14 +11,21 @@
 .productImage {
   height: 20em;
   width: 20em;
-  margin-left: 2em;
+  margin-left: 8em;
+
+  /* margin: none; */
+}
+
+.alignmentLeft {
+  text-align: left;
 }
 
 .desc {
-  margin-left: 7.2em;
+  margin-left: 12em;
   margin-top: 2em;
   font-size: 0.5cm;
   font-weight: 500;
+  color: black;
 }
 
 .value {
@@ -28,8 +35,14 @@
   text-align: center;
   padding: 1.2em;
   margin-left: 2em;
+  color: black;
 }
 
 .text {
   margin-left: 0.5em;
+  color: black;
+}
+
+.header {
+  color: white;
 }
