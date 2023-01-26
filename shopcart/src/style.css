@@ -3,9 +3,19 @@
   background-color: rgba(0, 196, 250, 0.842);
 }
 
+.title > a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .cart {
   margin-left: 70em;
   font-size: small;
+}
+
+.cart > a {
+  color: white;
+  text-decoration: none;
 }
 
 .productImage {
@@ -45,4 +55,10 @@
 
 .header {
   color: white;
+}
+
+.cartPage {
+  margin-left: -45em;
+  margin-top: 2em;
+  color: black;
 }

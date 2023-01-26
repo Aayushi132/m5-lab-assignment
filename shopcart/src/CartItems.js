@@ -1,4 +1,4 @@
-function CartItems(count) { 
+function CartItems(props) {
     
 }
 
