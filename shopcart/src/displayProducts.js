@@ -5,19 +5,17 @@ import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePlus, faSquareMinus } from "@fortawesome/free-solid-svg-icons";
-import {HandleCartContext} from './Contexts/handleCartService';
+import { HandleCartContext } from "./Contexts/handleCartService";
 import Home from "./home";
 
 // normal function receiving props
 function Display(products, cartTotal) {
-  const{ cartCount, setcartCount } = useContext(HandleCartContext)
+  const { cartCount, setcartCount } = useContext(HandleCartContext);
 
-  
   // console.log("products: ", products.children[1]);
   // console.log("cartTotal: ", cartTotal);
   const totalItems = cartTotal;
   const prod = products.children[1];
-
 
   const [show, setShow] = useState(false);
   const [showImge, setShowImge] = useState({});
@@ -28,14 +26,14 @@ function Display(products, cartTotal) {
   };
 
   const [count, setCount] = useState(prod.value);
-  let initialCount = 0
+  let initialCount = 0;
 
   const calculateCartItems = (itemsInCart) => {
     itemsInCart.map((items) => {
-      initialCount = initialCount + items.value
-    })
-    setcartCount(initialCount)
-  }
+      initialCount = initialCount + items.value;
+    });
+    setcartCount(initialCount);
+  };
 
   const addCount = (countValue) => {
     setCount(countValue + 1);
@@ -44,7 +42,7 @@ function Display(products, cartTotal) {
       console.log("Index cartProduct: ", CartData.CartProducts.indexOf(prod));
       const cartIndex = CartData.CartProducts.indexOf(prod);
       const cartData = CartData.CartProducts[cartIndex];
-      
+
       cartData.value += 1;
       CartData.CartProducts.pop(prod);
       CartData.CartProducts.push(cartData);
@@ -55,7 +53,7 @@ function Display(products, cartTotal) {
     //getCartCount();
     console.log("Updated Cart: ", CartData.CartProducts);
     //console.log("Updated Cart Count: ", getCartCount());
-    calculateCartItems(CartData.CartProducts)
+    calculateCartItems(CartData.CartProducts);
   };
 
   const removeCount = (countValue) => {
@@ -68,46 +66,21 @@ function Display(products, cartTotal) {
         if (obj.value > 1) {
           obj.value -= 1;
         } else {
-          // obj.value = 0;
-          // CartData.CartProducts.(obj);
+          obj.value = 0;
+          CartData.CartProducts.pop(obj);
         }
       }
     });
 
-    // if (CartData.CartProducts.indexOf(prod) > -1) {
-    //   const cartIndex = CartData.CartProducts.indexOf(prod);
-    //   const cartData = CartData.CartProducts[cartIndex];
-
-    //   if (cartData.value > 1) {
-    //     cartData.value -= 1;
-    //   } else {
-    //     CartData.CartProducts.pop(cartData);
-    //   }
-    // } else {
-    //   console.log("No items in cart.");
-    // }
-    //getCartCount();
-    // prod.value = count;
     console.log("Updated Cart: ", CartData.CartProducts);
     //console.log("Updated Cart Count: ", getCartCount());
-    calculateCartItems(CartData.CartProducts)
+    calculateCartItems(CartData.CartProducts);
   };
-
-  // const getCartCount = () => {
-  //   let count = 0;
-  //   for (let i = 0; i < CartData.CartProducts.length; i++) {
-  //     count += CartData.CartProducts[i].value;
-  //   }
-  //   console.log("CartTotal Before: ", ProductData.TotalCartItems[0].cartTotal);
-  //   ProductData.TotalCartItems[0].cartTotal = count;
-  //   console.log("CartTotal After: ", ProductData);
-  //   return count;
-  // };
 
   return (
     <div key={prod.id}>
       <p className="desc">
-        <span>{prod.desc}</span>
+        <span>{prod.desc} </span> <span style={{color: 'red'}}> ${prod.price}</span>
       </p>
       <img
         src={prod.image}

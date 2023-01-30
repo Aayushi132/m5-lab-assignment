@@ -10,20 +10,23 @@ import { CartData } from "./CartProduct";
 import Nav from "./Nav";
 import "./style.css";
 
-
-
-const App  = () =>{
-  const [Products, setProducts] = useState(ProductData)
-  const [CartProducts, setCartProducts] = useState(CartData)
-  return(
+const App = () => {
+  // this.state= {
+  //   sortType: "asc",
+  //   listNum: "",
+  // }
+  const [Products, setProducts] = useState(ProductData);
+  const [CartProducts, setCartProducts] = useState(CartData);
+  return (
     <div className="App text-secondary">
       <Nav
-              products={Products.Products}
-              cartTotalProduct={CartProducts.TotalCartItems}
-              cartItems={CartProducts.CartProducts}
-            />
+        products={Products.Products}
+        cartTotalProduct={CartProducts.TotalCartItems}
+        cartItems={CartProducts.CartProducts}
+        // sortType={this.state.sortType}
+        // listNum={this.state.listNum}
+      />
     </div>
-  )
-
-}
+  );
+};
 export default App;

@@ -1,18 +1,21 @@
 import { useContext } from "react";
 import { Link, BrowserRouter, Router, Route, Routes } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart, faRegistered, faHome } from "@fortawesome/free-solid-svg-icons";
+import {
+  faShoppingCart,
+  faRegistered,
+  faHome,
+} from "@fortawesome/free-solid-svg-icons";
 import Home from "./home";
 import Cart from "./cart";
 import Login from "./Login";
 import { ProductData } from "./Products";
 import { CartData } from "./CartProduct";
 import { useState, useEffect } from "react";
-import {HandleCartContext} from './Contexts/handleCartService';
-
+import { HandleCartContext } from "./Contexts/handleCartService";
 
 function Nav(props) {
-  const{ cartCount, setcartCount } = useContext(HandleCartContext)
+  const { cartCount, setcartCount } = useContext(HandleCartContext);
   const [counter, setCounter] = useState(0);
   const getCartCount = () => {
     if (CartData.CartProducts.length > 0) {
@@ -29,9 +32,8 @@ function Nav(props) {
     }
   };
 
-
   useEffect(() => {
-    setCounter(cartCount)
+    setCounter(cartCount);
   }, cartCount);
   return (
     <div>
@@ -51,7 +53,16 @@ function Nav(props) {
         {/* Routes */}
         <Routes>
           {/* <Route path="/" element={<displayProducts />} /> */}
-          <Route path="/" element={<Home products={props} />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                products={props}
+                // sortType={props.sortType}
+                // listNum={props.listNum}
+              />
+            }
+          />
 
           <Route path="/allLists" element={<Cart cartItems={props} />} />
           <Route exact path="/login" element={<Login />} />

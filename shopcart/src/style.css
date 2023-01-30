@@ -57,6 +57,11 @@
   color: white;
 }
 
+.header > label {
+  color: black ;
+  
+}
+
 .cartPage {
   margin-left: -45em;
   margin-top: 2em;
