@@ -24,7 +24,7 @@ const Home = (products) => {
         case "lowest":
           return descOrder(sorted, sortProperty);
         case "normal":
-         return normalOrder(sorted);
+          return normalOrder(sorted);
       }
     };
 
@@ -50,11 +50,11 @@ const Home = (products) => {
   };
 
   const normalOrder = (sorted) => {
-     console.log("in normal");
-     sorted = [...products.products.products];
-     console.log(sorted);
-     setData(sorted);
-  }
+    console.log("in normal");
+    sorted = [...products.products.products];
+    console.log(sorted);
+    setData(sorted);
+  };
 
   return (
     <div className="header">
